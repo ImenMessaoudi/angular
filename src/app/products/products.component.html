@@ -1,0 +1,37 @@
+
+
+<h2>Add Product </h2>
+
+<form>
+  <div  class="form-group">
+    <label >Search:</label>
+    <input type="number" name="price" class="form-control" [(ngModel)]="priceMax" >
+  </div>
+  <
+</form>
+<table  class="table">
+  <tr>
+    <th>Id</th>
+    <th>title</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>like</th>
+  </tr>
+  <tbody *ngFor="let product of listProdcut; let i=index">
+  <tr *ngIf="product.price<priceMax">
+
+   <td>{{product.id}}</td>
+    <td>{{product.title}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.like}}</td>
+    <td><button class="btn btn-warning" (click)="likeplus(i)">like</button></td>
+    <td>
+      <button class="btn btn-success" [disabled]="product.quantity==0" (click)="buyProduct(i)">buy</button>
+    </td>
+    <a routerLink="{{product.id}}">Detaille</a>
+  </tr>
+  </tbody>
+</table>
+<button (click)="alerteStock">Stock</button>
+<h1>Le stock : {{alerteStock}}</h1>

@@ -1,0 +1,15 @@
+<p>liste Todo </p>
+<table class="table">
+  <tr>
+    <td>Id</td>
+    <td>title</td>
+    <td>Completed</td>
+  </tr>
+  <tr *ngFor="let l of listToDo">
+    <td>{{l.id}}</td>
+    <td>{{l.title}}</td>
+    <td>{{l.completed}}</td>
+  </tr>
+</table>
+<button (click)="getStat()">GetStat</button>
+<h2>le Nombre of todo : {{count}}</h2>
